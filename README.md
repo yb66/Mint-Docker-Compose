@@ -89,7 +89,7 @@ In the case that you're starting a new project the only differences would be tha
 
 Add `~/Projects/my-stunning-app` to Docker's file sharing, then:
 
-    $ cd example-todo
+    $ cd my-stunning-app
 
 This time the `tree` is different because we don't bring in an existing project:
     
