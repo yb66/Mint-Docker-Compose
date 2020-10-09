@@ -17,34 +17,34 @@ A skeleton repo for setting up and/or running a Mint project via Docker Compose.
 
 …like [Mint's example todo app](https://github.com/mint-lang/example-todo):
 
-		$ pwd
-		# ~/Projects
+    $ pwd
+    # ~/Projects
     $ git clone https://github.com/yb66/mint-docker-compose example-todo
 
 Add `~/Projects/example-todo` to Docker's file sharing, then:
 
-		$ cd example-todo
-		$ git clone https://github.com/mint-lang/example-todo
+    $ cd example-todo
+    $ git clone https://github.com/mint-lang/example-todo
 
 At this point if you run `tree .` you would see:
 
-		$ tree .
-		.
-		├── Docker
-		│   ├── Dockerfile
-		│   └── docker-entrypoint.sh
-		├── README.md
-		├── docker-compose.yml
-		└── example-todo
-				├── Makefile
-				├── assets
-				│   ├── head.html
-				│   └── icon.png
-				├── mint.json
-				└── source
-						├── Main.mint
-						├── Store.mint
-						└── Todo.mint
+    $ tree .
+    .
+    ├── Docker
+    │   ├── Dockerfile
+    │   └── docker-entrypoint.sh
+    ├── README.md
+    ├── docker-compose.yml
+    └── example-todo
+        ├── Makefile
+        ├── assets
+        │   ├── head.html
+        │   └── icon.png
+        ├── mint.json
+        └── source
+            ├── Main.mint
+            ├── Store.mint
+            └── Todo.mint
 
 Open my editor and create a file called .env, and write:
 
@@ -83,23 +83,23 @@ To stop the project you can use [`docker-compose stop`](https://docs.docker.com/
 
 In the case that you're starting a new project the only differences would be that you don't run the `git clone https://github.com/mint-lang/example-todo` command because a workspace will be set up an initialised with a Mint project. So:
 
-		$ pwd
-		# ~/Projects
+    $ pwd
+    # ~/Projects
     $ git clone https://github.com/yb66/mint-docker-compose my-stunning-app
 
 Add `~/Projects/my-stunning-app` to Docker's file sharing, then:
 
-		$ cd example-todo
+    $ cd example-todo
 
 This time the `tree` is different because we don't bring in an existing project:
     
-		$ tree .
-		.
-		├── Docker
-		│   ├── Dockerfile
-		│   └── docker-entrypoint.sh
-		├── README.md
-		└── docker-compose.yml
+    $ tree .
+    .
+    ├── Docker
+    │   ├── Dockerfile
+    │   └── docker-entrypoint.sh
+    ├── README.md
+    └── docker-compose.yml
 
 Set up an `.env`. For example:
 
@@ -113,29 +113,29 @@ Run `docker-compose up -d` to start the project.
 
 Running `tree` again will reveal that a default workspace has been set up for you:
 
-		$ tree .
-		.
-		├── Docker
-		│   ├── Dockerfile
-		│   └── docker-entrypoint.sh
-		├── README.md
-		├── docker-compose.yml
-		└── workspace
-				├── assets
-				│   └── head.html
-				├── mint.json
-				├── source
-				│   └── Main.mint
-				└── tests
-						└── Main.mint
+    $ tree .
+    .
+    ├── Docker
+    │   ├── Dockerfile
+    │   └── docker-entrypoint.sh
+    ├── README.md
+    ├── docker-compose.yml
+    └── workspace
+        ├── assets
+        │   └── head.html
+        ├── mint.json
+        ├── source
+        │   └── Main.mint
+        └── tests
+            └── Main.mint
 
 Now if you open a browser and go to `http://localhost:4568`, you should see the default Mint page with its greeting. Open `workspace/source/Main.mint` and alter the greeting, save, and you should see the page update in the browser.
 
 You can also see that an image has been set up called `my-stunning-app_mint`.
 
-		$ docker images
-		REPOSITORY              TAG      <snip!>        
-		my-stunning-app_mint    latest
+    $ docker images
+    REPOSITORY              TAG      <snip!>        
+    my-stunning-app_mint    latest
 
 
 If you want to keep this skeleton project separate from the contents of the Mint workspace then I'd suggest adding `workspace` (or whatever you've chosen to call it) to a `.gitignore` in this project's root and then you're free to start a new git repo in the workspace, but it all depends on the way you wish to organise things.
