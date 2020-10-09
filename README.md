@@ -33,6 +33,7 @@ At this point if you run `tree .` you would see:
     ├── Docker
     │   ├── Dockerfile
     │   └── docker-entrypoint.sh
+    ├── LICENCE.txt
     ├── README.md
     ├── docker-compose.yml
     └── example-todo
@@ -98,6 +99,7 @@ This time the `tree` is different because we don't bring in an existing project:
     ├── Docker
     │   ├── Dockerfile
     │   └── docker-entrypoint.sh
+    ├── LICENCE.txt
     ├── README.md
     └── docker-compose.yml
 
